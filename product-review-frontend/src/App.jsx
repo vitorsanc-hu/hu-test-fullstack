@@ -50,11 +50,11 @@ function App() {
 
         setLoading(true)
         
-        const produtosResponse = await fetch('/produtos')
+        const produtosResponse = await fetch('http://localhost:8000/produtos')
         const produtosData = await produtosResponse.json()
         setProdutos(produtosData)
 
-        const avaliacoesResponse = await fetch('/avaliacoes')
+        const avaliacoesResponse = await fetch('http://localhost:8000/avaliacoes')
         const avaliacoesData = await avaliacoesResponse.json()
         setAvaliacoes(prev => [...prev, ...avaliacoesData])
 

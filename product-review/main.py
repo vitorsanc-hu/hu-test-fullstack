@@ -1,9 +1,11 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import crud
 import schemas
 from database import init_db
 
 app = Flask(__name__)
+CORS(app, origins=["*"])
 
 init_db(app)
 
